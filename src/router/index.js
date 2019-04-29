@@ -17,8 +17,8 @@ import tasksEdit from '../components/Tasks/edit'
 Vue.use(Router)
 //
 export default new Router({
-  mode: 'history',
-  routes: [
+    /* mode: 'history', */
+    routes: [
     { path: '/', component: home },
     { path: '/about', component: about },
     { path: '/page2', component: page2 },

@@ -29,13 +29,14 @@ export default {
     methods: {
         createTask: function() {
             console.log('#create')
+            var self = this
             if (this.newTodoName == "") { return; }        
             this.database.collection(tableName).add({
                 title: this.title,
                 content: this.content
             }).then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id)
-                window.location.href='/tasks'
+                self.$router.push('/tasks')
             }).catch(function(error) {
                 console.log("Error adding document: ", error)
             })

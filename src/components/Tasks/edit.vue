@@ -57,10 +57,11 @@ export default {
             })
         },
         deleteTask: function () {
+            var self = this
             var docRef = this.database.collection("tasks").doc(this.$route.params.id)
             docRef.delete().then(function() {
                 console.log("Document successfully deleted!")
-                window.location.href='/tasks'
+                self.$router.push('/tasks')
             }).catch(function(error) {
                 console.error("Error removing document: ", error)
             })
