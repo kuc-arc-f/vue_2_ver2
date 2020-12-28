@@ -20,6 +20,17 @@ import firebase from 'firebase'
 export default {
     created() {
         this.database = firebase.firestore()
+        var self = this
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log("#Auth-OK");
+//                console.log(user.email);
+            } else {
+                alert("Error, auth error, please Google Login")
+                self.$router.push('/')
+                console.log('#no-User');
+            }
+        })                
     },
     data() {
         return {

@@ -13,6 +13,12 @@ import tasksNew from '../components/Tasks/new'
 import tasksIndex from '../components/Tasks/Index'
 import tasksShow from '../components/Tasks/show'
 import tasksEdit from '../components/Tasks/edit'
+//user
+import usersLogout from '../components/Users/Logout'
+import usersLogin from '../components/Users/Login'
+
+import usersCheck from '../components/Users/check'
+import usersTestAuth from '../components/Users/test_auth'
 
 Vue.use(Router)
 //
@@ -23,6 +29,11 @@ export default new Router({
     { path: '/about', component: about },
     { path: '/page2', component: page2 },
     { path: '/page3', component: page3 },
+    /* users */
+    { path: '/logout', component: usersLogout },
+    { path: '/login', component: usersLogin },
+    { path: '/users/check', component: usersCheck },    
+    { path: '/test_auth', component: usersTestAuth },
     /* todos */
     { path: '/todos/new', component: todosNew },
     { path: '/todos', component: todosIndex },

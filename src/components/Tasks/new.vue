@@ -14,11 +14,22 @@
 
 <script>
 import firebase from 'firebase'
-var tableName = 'tasks'
+// import LibAuth from '../../libs/LibAuth'
 
 export default {
-    created() {
+    async created() {
         this.database = firebase.firestore()
+        var self = this
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log("#Auth-OK");
+//                console.log(user.email);
+            } else {
+                alert("Error, auth error, please Google Login")
+                self.$router.push('/')
+                console.log('#no-User');
+            }
+        })        
     },
     data() {
         return {
@@ -28,17 +39,18 @@ export default {
     },
     methods: {
         createTask: function() {
-            console.log('#create')
+console.log('#create')
             var self = this
             if (this.newTodoName == "") { return; }        
-            this.database.collection(tableName).add({
+            this.database.collection('tasks').add({
                 title: this.title,
                 content: this.content
             }).then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id)
                 self.$router.push('/tasks')
             }).catch(function(error) {
-                console.log("Error adding document: ", error)
+                alert("Error save: "+ error)
+                console.error("Error adding document: ", error)
             })
             this.newTodoName = ""
         },

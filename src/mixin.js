@@ -10,7 +10,8 @@ export const Mixin =  {
         this.sysConst={
             STORAGE_KEY_showId : 'key_show_id',
             STORAGE_KEY_tasksData : 'key_tasks_dat',
-            STORAGE_KEY_flash : 'strage_flash_key'
+            STORAGE_KEY_flash : 'strage_flash_key',
+            STORAGE_KEY_userData : 'key_user_dat',
         }
     },
     /* local storage */

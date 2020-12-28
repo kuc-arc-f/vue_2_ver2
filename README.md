@@ -7,12 +7,14 @@
 
  date    : 2019/04/28
 
+ update : 2020/12/28
+
 ***
 ### Summary
 
 vue_2:
 
-Vue.js (Vue CLI 3) + firebase ,sample ver2
+Vue.js (Vue CLI 3) + firebase ,Cloud Firestore / auth sample ver2
 
 ***
 ### Blog
